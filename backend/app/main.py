@@ -4,10 +4,11 @@ from .api import router as api_router
 
 app = FastAPI(title="Care&Cure API")
 
-# Allow all origins for simplicity in MVP
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://carecure-ecru.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
