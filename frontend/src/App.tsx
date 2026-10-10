@@ -524,7 +524,8 @@ function App() {
 
   useEffect(() => {
     // Preload medicines catalog
-    fetch('http://localhost:8000/api/medicines')
+
+fetch(`${import.meta.env.VITE_API_URL}/api/medicines`)
       .then(res => res.json())
       .then(data => setStoreMedicines(data))
       .catch(err => console.error("Initial medicine catalog load error:", err));
